@@ -8,21 +8,21 @@ const log: ILogger = logFactory.createLogger("MyLogger", { maskPII });
 const data = { compiler: "Webpack", language: "Typescript" };
 log.debug("Data", data);
 
-// process.env.LOG_LEVEL = "DEBUG";
+process.env.LOG_LEVEL = "DEBUG";
 
-// log.debug("Data", data);
+log.debug("Data", data);
 
-// log.info("This is the data", data);
+log.info("This is the data", data);
 
-// const warningError = new Error(
-//   "Database disconnected unexpectedly. Retrying..."
-// );
+const warningError = new Error(
+  "Database disconnected unexpectedly. Retrying..."
+);
 
-// log.warn("Database connection issue", data, warningError);
+log.warn("Database connection issue", data, warningError);
 
-// const fatalError = new Error("Database is offline.");
+const fatalError = new Error("Database is offline.");
 
-// log.error("Fatal error, aborting.", data, fatalError);
+log.error("Fatal error, aborting.", data, fatalError);
 
 log.info("Phone number, Question & Answer", {
   maskPII: {
